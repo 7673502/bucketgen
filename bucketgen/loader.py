@@ -24,12 +24,18 @@ class DataLoader:
 
         self.images = np.stack(image_list)
 
-    def to_grayscale(self) -> np.array:
+        if len(self.images.shape) == 3:
+            self.images = np.expand_dims(self.images, axis=-1)
+
+    def to_grayscale(self) -> np.ndarray:
         grayscale_images = (
             0.3086 * self.images[:, :, :, 0] + 
             0.6094 * self.images[:, :, :, 1] + 
             0.0820 * self.images[:, :, :, 2]
         )
+
+        grayscale_images = np.clip(grayscale_images, 0, 255).astype(np.uint8)
+
         return np.expand_dims(grayscale_images, axis=-1)
     
 

@@ -1,6 +1,5 @@
 import pytest
 import bucketgen as bg
-import numpy as np
 
 def test_init():
     dl = bg.DataLoader('tests/data/dataset1')
@@ -18,4 +17,3 @@ def test_grayscale():
     dl = bg.DataLoader('tests/data/dataset1')
     grayscale_images = dl.to_grayscale()
     assert grayscale_images.shape == (10, 32, 32, 1)
-    
