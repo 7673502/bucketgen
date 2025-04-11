@@ -32,7 +32,10 @@ class Generator:
                     sampled_image[h, w, c] = np.random.choice(np.arange(256), p=self.buckets[h, w, c])
         
         if show_result:
-            plt.imshow(sampled_image, cmap='gray')
+            if sampled_image.ndim == 3 and sampled_image.shape[2] == 3:
+                plt.imshow(sampled_image)
+            else:
+                plt.imshow(sampled_image, cmap='gray')
             plt.axis('off')
             plt.subplots_adjust(left=0, right=1, top=1, bottom=0)
             plt.show()
