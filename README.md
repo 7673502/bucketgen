@@ -4,7 +4,7 @@ BucketGen is a basic image generation algorithm that works by sampling from the 
 ## Basic Usage
 BucketGen consists of two main components: the `DataLoader` and `Generator` classes. The `DataLoader` class converts a given directory of images to a NumPy array, and the `Generator` class creates images by sampling pixel values from a given NumPy array. 
 
-The basic usage, including examples showing how to create images similar to the ones shown in the ["Example Outputs"](#-example-outputs) section, is explained in the [demo jupyter notebook](demonstration.ipynb).
+The basic usage, including examples showing how to create images similar to the ones shown in the ["Example Outputs"](#Example-Outputs) section, is explained in the [demo jupyter notebook](demonstration.ipynb).
 
 ## Example Outputs
 Examples of BucketGen output on some famous datasets:
